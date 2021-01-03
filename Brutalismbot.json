@@ -1,0 +1,131 @@
+{
+  "ModelName": "Brutalismbot",
+  "ModelMetadata": {
+    "Author": "small weird number",
+    "DateCreated": "Oct 18, 2020, 02:11 PM",
+    "DateLastModified": "Feb 07, 2021, 09:29 PM",
+    "Description": "Brutalismbot posting committee",
+    "Version": "2.0",
+    "AWSService": "Amazon DynamoDB"
+  },
+  "DataModel": [
+    {
+      "TableName": "Brutalismbot",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "HASH",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "SORT",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "CREATED_UTC",
+          "AttributeType": "N"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "SORT",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "SORT",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "HASH",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "HASH": { "S": "REDDIT/POST/1600000000/t3_abcdef" },
+          "SORT": { "S": "REDDIT/POST" }
+        },
+        {
+          "HASH": { "S": "REDDIT/POST/1600000000/t3_abcdef" },
+          "SORT": { "S": "SLACK/POST" }
+        },
+        {
+          "HASH": { "S": "REDDIT/POST/1600000000/t3_abcdef" },
+          "SORT": { "S": "TWITTER/POST" }
+        },
+        {
+          "HASH": { "S": "REDDIT/POST/1600000001/t3_fedcba" },
+          "SORT": { "S": "REDDIT/POST" }
+        },
+        {
+          "HASH": { "S": "REDDIT/POST/1600000001/t3_fedcba" },
+          "SORT": { "S": "SLACK/POST" }
+        },
+        {
+          "HASH": { "S": "REDDIT/POST/1600000001/t3_fedcba" },
+          "SORT": { "S": "TWITTER/POST" }
+        },
+        {
+          "HASH": { "S": "SLACK/AUTH/T1234ABCD/C1234ABCD" },
+          "SORT": { "S": "SLACK/AUTH" }
+        },
+        {
+          "HASH": { "S": "SLACK/AUTH/TABCD1234/CABCD1234" },
+          "SORT": { "S": "SLACK/AUTH" }
+        },
+        {
+          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000000/t3_abcdef" },
+          "SORT": { "S": "REDDIT/POST/1600000000/t3_abcdef" }
+        },
+        {
+          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000000/t3_abcdef" },
+          "SORT": { "S": "SLACK/AUTH/T1234ABCD/C1234ABCD" }
+        },
+        {
+          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000001/t3_fedcba" },
+          "SORT": { "S": "REDDIT/POST/1600000001/t3_fedcba" }
+        },
+        {
+          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000001/t3_fedcba" },
+          "SORT": { "S": "SLACK/AUTH/T1234ABCD/C1234ABCD" }
+        },
+        {
+          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000000/t3_abcdef" },
+          "SORT": { "S": "REDDIT/POST/1600000000/t3_abcdef" }
+        },
+        {
+          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000000/t3_abcdef" },
+          "SORT": { "S": "SLACK/AUTH/TABCD1234/CABCD1234" }
+        },
+        {
+          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000001/t3_fedcba" },
+          "SORT": { "S": "REDDIT/POST/1600000001/t3_fedcba" }
+        },
+        {
+          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000001/t3_fedcba" },
+          "SORT": { "S": "SLACK/AUTH/TABCD1234/CABCD1234" }
+        },
+        {
+          "HASH": { "S": "TWITTER/APP/@brutalismbot" },
+          "SORT": { "S": "TWITTER/APP" }
+        },
+        {
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1600000000/t3_abcdef" },
+          "SORT": { "S": "REDDIT/POST/1600000000/t3_abcdef" }
+        },
+        {
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1600000001/t3_defcba" },
+          "SORT": { "S": "REDDIT/POST/1600000001/t3_fedcba" }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      }
+    }
+  ]
+}
