@@ -1,0 +1,17 @@
+version: '3.8'
+volumes:
+  dynamodb:
+services:
+  dynamodb:
+    image: amazon/dynamodb-local
+    network_mode: bridge
+    command: |
+      -jar DynamoDBLocal.jar
+      -dbPath /var/tmp
+      -optimizeDbBeforeStartup
+      -port 8000
+      -sharedDb
+    ports:
+      - 8000:8000
+    volumes:
+      - dynamodb:/var/tmp
