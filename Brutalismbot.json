@@ -115,12 +115,20 @@
           "SORT": { "S": "TWITTER/APP" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1600000000/t3_abcdef" },
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1357904607968641029/1600000000/t3_abcdef" },
           "SORT": { "S": "REDDIT/POST/1600000000/t3_abcdef" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1600000001/t3_defcba" },
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1357904607968641029/1600000000/t3_abcdef" },
+          "SORT": { "S": "TWITTER/APP/@brutalismbot" }
+        },
+        {
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1365439259730190341/1600000001/t3_fedcba" },
           "SORT": { "S": "REDDIT/POST/1600000001/t3_fedcba" }
+        },
+        {
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1365439259730190341/1600000001/t3_fedcba" },
+          "SORT": { "S": "TWITTER/APP/@brutalismbot" }
         }
       ],
       "DataAccess": {
