@@ -51,7 +51,7 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   global_secondary_index {
-    name            = "SORT"
+    name            = "LIST"
     hash_key        = "SORT"
     range_key       = "HASH"
     write_capacity  = 1

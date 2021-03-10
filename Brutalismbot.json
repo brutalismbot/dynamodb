@@ -29,7 +29,7 @@
       ],
       "GlobalSecondaryIndexes": [
         {
-          "IndexName": "SORT",
+          "IndexName": "LIST",
           "KeyAttributes": {
             "PartitionKey": {
               "AttributeName": "SORT",
@@ -71,12 +71,12 @@
           "SORT": { "S": "TWITTER/POST" }
         },
         {
-          "HASH": { "S": "SLACK/AUTH/T1234ABCD/C1234ABCD" },
-          "SORT": { "S": "SLACK/AUTH" }
+          "HASH": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" },
+          "SORT": { "S": "SLACK/WEBHOOK" }
         },
         {
-          "HASH": { "S": "SLACK/AUTH/TABCD1234/CABCD1234" },
-          "SORT": { "S": "SLACK/AUTH" }
+          "HASH": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" },
+          "SORT": { "S": "SLACK/WEBHOOK" }
         },
         {
           "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000000/t3_abcdef" },
@@ -84,7 +84,7 @@
         },
         {
           "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000000/t3_abcdef" },
-          "SORT": { "S": "SLACK/AUTH/T1234ABCD/C1234ABCD" }
+          "SORT": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" }
         },
         {
           "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000001/t3_fedcba" },
@@ -92,7 +92,7 @@
         },
         {
           "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000001/t3_fedcba" },
-          "SORT": { "S": "SLACK/AUTH/T1234ABCD/C1234ABCD" }
+          "SORT": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" }
         },
         {
           "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000000/t3_abcdef" },
@@ -100,7 +100,7 @@
         },
         {
           "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000000/t3_abcdef" },
-          "SORT": { "S": "SLACK/AUTH/TABCD1234/CABCD1234" }
+          "SORT": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" }
         },
         {
           "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000001/t3_fedcba" },
@@ -108,7 +108,7 @@
         },
         {
           "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000001/t3_fedcba" },
-          "SORT": { "S": "SLACK/AUTH/TABCD1234/CABCD1234" }
+          "SORT": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" }
         },
         {
           "HASH": { "S": "TWITTER/APP/@brutalismbot" },

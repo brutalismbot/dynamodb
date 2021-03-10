@@ -20,7 +20,7 @@ namespace :local do
     end
 
     desc "Destroy local DynamoDB"
-    task :clobber do
+    task :drop do
       sh "docker-compose down --volumes"
     end
 
