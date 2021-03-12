@@ -43,31 +43,49 @@
           "Projection": {
             "ProjectionType": "ALL"
           }
+        },
+        {
+          "IndexName": "CREATED_UTC",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "SORT",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "CREATED_UTC",
+              "AttributeType": "N"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "KEYS_ONLY"
+          }
         }
       ],
       "TableData": [
         {
-          "HASH": { "S": "REDDIT/POST/1600000000/t3_abcdef" },
-          "SORT": { "S": "REDDIT/POST" }
+          "HASH": { "S": "REDDIT/POST/t3_abcdef" },
+          "SORT": { "S": "REDDIT/POST" },
+          "CREATED_UTC": {"N": "1600000000"}
         },
         {
-          "HASH": { "S": "REDDIT/POST/1600000000/t3_abcdef" },
+          "HASH": { "S": "REDDIT/POST/t3_abcdef" },
           "SORT": { "S": "SLACK/POST" }
         },
         {
-          "HASH": { "S": "REDDIT/POST/1600000000/t3_abcdef" },
+          "HASH": { "S": "REDDIT/POST/t3_abcdef" },
           "SORT": { "S": "TWITTER/POST" }
         },
         {
-          "HASH": { "S": "REDDIT/POST/1600000001/t3_fedcba" },
-          "SORT": { "S": "REDDIT/POST" }
+          "HASH": { "S": "REDDIT/POST/t3_fedcba" },
+          "SORT": { "S": "REDDIT/POST" },
+          "CREATED_UTC": {"N": "1600000001"}
         },
         {
-          "HASH": { "S": "REDDIT/POST/1600000001/t3_fedcba" },
+          "HASH": { "S": "REDDIT/POST/t3_fedcba" },
           "SORT": { "S": "SLACK/POST" }
         },
         {
-          "HASH": { "S": "REDDIT/POST/1600000001/t3_fedcba" },
+          "HASH": { "S": "REDDIT/POST/t3_fedcba" },
           "SORT": { "S": "TWITTER/POST" }
         },
         {
@@ -79,35 +97,35 @@
           "SORT": { "S": "SLACK/WEBHOOK" }
         },
         {
-          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000000/t3_abcdef" },
-          "SORT": { "S": "REDDIT/POST/1600000000/t3_abcdef" }
+          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_abcdef" },
+          "SORT": { "S": "REDDIT/POST/t3_abcdef" }
         },
         {
-          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000000/t3_abcdef" },
+          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_abcdef" },
           "SORT": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" }
         },
         {
-          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000001/t3_fedcba" },
-          "SORT": { "S": "REDDIT/POST/1600000001/t3_fedcba" }
+          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABC/t3_fedcba" },
+          "SORT": { "S": "REDDIT/POST/t3_fedcba" }
         },
         {
-          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/1600000001/t3_fedcba" },
+          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_fedcba" },
           "SORT": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" }
         },
         {
-          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000000/t3_abcdef" },
-          "SORT": { "S": "REDDIT/POST/1600000000/t3_abcdef" }
+          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_abcdef" },
+          "SORT": { "S": "REDDIT/POST/t3_abcdef" }
         },
         {
-          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000000/t3_abcdef" },
+          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_abcdef" },
           "SORT": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" }
         },
         {
-          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000001/t3_fedcba" },
-          "SORT": { "S": "REDDIT/POST/1600000001/t3_fedcba" }
+          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_fedcba" },
+          "SORT": { "S": "REDDIT/POST/t3_fedcba" }
         },
         {
-          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/1600000001/t3_fedcba" },
+          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_fedcba" },
           "SORT": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" }
         },
         {
@@ -115,19 +133,19 @@
           "SORT": { "S": "TWITTER/APP" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1357904607968641029/1600000000/t3_abcdef" },
-          "SORT": { "S": "REDDIT/POST/1600000000/t3_abcdef" }
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1357904607968641029/t3_abcdef" },
+          "SORT": { "S": "REDDIT/POST/t3_abcdef" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1357904607968641029/1600000000/t3_abcdef" },
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1357904607968641029/t3_abcdef" },
           "SORT": { "S": "TWITTER/APP/@brutalismbot" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1365439259730190341/1600000001/t3_fedcba" },
-          "SORT": { "S": "REDDIT/POST/1600000001/t3_fedcba" }
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1365439259730190341/t3_fedcba" },
+          "SORT": { "S": "REDDIT/POST/t3_fedcba" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1365439259730190341/1600000001/t3_fedcba" },
+          "HASH": { "S": "TWITTER/POST/@brutalismbot/1365439259730190341/t3_fedcba" },
           "SORT": { "S": "TWITTER/APP/@brutalismbot" }
         }
       ],

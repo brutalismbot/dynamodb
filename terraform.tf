@@ -45,17 +45,31 @@ resource "aws_dynamodb_table" "brutalismbot" {
     type = "S"
   }
 
+  attribute {
+    name = "CREATED_UTC"
+    type = "N"
+  }
+
   ttl {
     attribute_name = "TTL"
     enabled        = true
   }
 
   global_secondary_index {
+    name            = "CREATED_UTC"
+    hash_key        = "SORT"
+    range_key       = "CREATED_UTC"
+    projection_type = "KEYS_ONLY"
+    read_capacity   = 1
+    write_capacity  = 1
+  }
+
+  global_secondary_index {
     name            = "LIST"
     hash_key        = "SORT"
     range_key       = "HASH"
-    write_capacity  = 1
-    read_capacity   = 1
     projection_type = "ALL"
+    read_capacity   = 1
+    write_capacity  = 1
   }
 }
