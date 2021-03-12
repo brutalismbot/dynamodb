@@ -5,6 +5,7 @@ services:
   dynamodb:
     image: amazon/dynamodb-local
     network_mode: bridge
+    restart: always
     command: |
       -jar DynamoDBLocal.jar
       -dbPath /var/tmp
