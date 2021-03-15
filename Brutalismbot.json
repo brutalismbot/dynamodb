@@ -105,7 +105,7 @@
           "SORT": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" }
         },
         {
-          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABC/t3_fedcba" },
+          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_fedcba" },
           "SORT": { "S": "REDDIT/POST/t3_fedcba" }
         },
         {
