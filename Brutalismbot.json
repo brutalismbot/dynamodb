@@ -65,28 +65,32 @@
         {
           "HASH": { "S": "REDDIT/POST/t3_abcdef" },
           "SORT": { "S": "REDDIT/POST" },
-          "CREATED_UTC": {"N": "1600000000"}
+          "CREATED_UTC": { "N": "1600000000" }
         },
         {
           "HASH": { "S": "REDDIT/POST/t3_abcdef" },
-          "SORT": { "S": "SLACK/POST" }
+          "SORT": { "S": "SLACK/POST" },
+          "CREATED_UTC": { "N": "1600000000" }
         },
         {
           "HASH": { "S": "REDDIT/POST/t3_abcdef" },
-          "SORT": { "S": "TWITTER/POST" }
+          "SORT": { "S": "TWITTER/POST" },
+          "CREATED_UTC": { "N": "1600000000" }
         },
         {
           "HASH": { "S": "REDDIT/POST/t3_fedcba" },
           "SORT": { "S": "REDDIT/POST" },
-          "CREATED_UTC": {"N": "1600000001"}
+          "CREATED_UTC": { "N": "1600000001" }
         },
         {
           "HASH": { "S": "REDDIT/POST/t3_fedcba" },
-          "SORT": { "S": "SLACK/POST" }
+          "SORT": { "S": "SLACK/POST" },
+          "CREATED_UTC": { "N": "1600000001" }
         },
         {
           "HASH": { "S": "REDDIT/POST/t3_fedcba" },
-          "SORT": { "S": "TWITTER/POST" }
+          "SORT": { "S": "TWITTER/POST" },
+          "CREATED_UTC": { "N": "1600000001" }
         },
         {
           "HASH": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" },
@@ -97,35 +101,35 @@
           "SORT": { "S": "SLACK/WEBHOOK" }
         },
         {
-          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_abcdef" },
+          "HASH": { "S": "SLACK/POST/t3_abcdef/T1234ABCD/C1234ABCD" },
           "SORT": { "S": "REDDIT/POST/t3_abcdef" }
         },
         {
-          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_abcdef" },
+          "HASH": { "S": "SLACK/POST/t3_abcdef/T1234ABCD/C1234ABCD" },
           "SORT": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" }
         },
         {
-          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_fedcba" },
+          "HASH": { "S": "SLACK/POST/t3_fedcba/T1234ABCD/C1234ABCD" },
           "SORT": { "S": "REDDIT/POST/t3_fedcba" }
         },
         {
-          "HASH": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_fedcba" },
+          "HASH": { "S": "SLACK/POST/t3_fedcba/T1234ABCD/C1234ABCD" },
           "SORT": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" }
         },
         {
-          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_abcdef" },
+          "HASH": { "S": "SLACK/POST/t3_abcdef/TABCD1234/CABCD1234" },
           "SORT": { "S": "REDDIT/POST/t3_abcdef" }
         },
         {
-          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_abcdef" },
+          "HASH": { "S": "SLACK/POST/t3_abcdef/TABCD1234/CABCD1234" },
           "SORT": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" }
         },
         {
-          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_fedcba" },
+          "HASH": { "S": "SLACK/POST/t3_fedcba/TABCD1234/CABCD1234" },
           "SORT": { "S": "REDDIT/POST/t3_fedcba" }
         },
         {
-          "HASH": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_fedcba" },
+          "HASH": { "S": "SLACK/POST/t3_fedcba/TABCD1234/CABCD1234" },
           "SORT": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" }
         },
         {
@@ -133,19 +137,27 @@
           "SORT": { "S": "TWITTER/APP" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1357904607968641029/t3_abcdef" },
+          "HASH": {
+            "S": "TWITTER/POST/@brutalismbot/t3_abcdef/1357904607968641029"
+          },
           "SORT": { "S": "REDDIT/POST/t3_abcdef" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1357904607968641029/t3_abcdef" },
+          "HASH": {
+            "S": "TWITTER/POST/@brutalismbot/t3_abcdef/1357904607968641029"
+          },
           "SORT": { "S": "TWITTER/APP/@brutalismbot" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1365439259730190341/t3_fedcba" },
+          "HASH": {
+            "S": "TWITTER/POST/@brutalismbot/t3_fedcba/1365439259730190341"
+          },
           "SORT": { "S": "REDDIT/POST/t3_fedcba" }
         },
         {
-          "HASH": { "S": "TWITTER/POST/@brutalismbot/1365439259730190341/t3_fedcba" },
+          "HASH": {
+            "S": "TWITTER/POST/@brutalismbot/t3_fedcba/1365439259730190341"
+          },
           "SORT": { "S": "TWITTER/APP/@brutalismbot" }
         }
       ],
