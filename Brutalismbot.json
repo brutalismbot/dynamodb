@@ -13,11 +13,7 @@
       "TableName": "Brutalismbot",
       "KeyAttributes": {
         "PartitionKey": {
-          "AttributeName": "HASH",
-          "AttributeType": "S"
-        },
-        "SortKey": {
-          "AttributeName": "SORT",
+          "AttributeName": "KEY",
           "AttributeType": "S"
         }
       },
@@ -25,30 +21,30 @@
         {
           "AttributeName": "CREATED_UTC",
           "AttributeType": "N"
+        },
+        {
+          "AttributeName": "TYPE",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "REDDIT_NAME",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "SLACK_WEBHOOK_ID",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "TWITTER_APP_ID",
+          "AttributeType": "S"
         }
       ],
       "GlobalSecondaryIndexes": [
         {
-          "IndexName": "LIST",
+          "IndexName": "CHRONO",
           "KeyAttributes": {
             "PartitionKey": {
-              "AttributeName": "SORT",
-              "AttributeType": "S"
-            },
-            "SortKey": {
-              "AttributeName": "HASH",
-              "AttributeType": "S"
-            }
-          },
-          "Projection": {
-            "ProjectionType": "ALL"
-          }
-        },
-        {
-          "IndexName": "CREATED_UTC",
-          "KeyAttributes": {
-            "PartitionKey": {
-              "AttributeName": "SORT",
+              "AttributeName": "TYPE",
               "AttributeType": "S"
             },
             "SortKey": {
@@ -59,106 +55,119 @@
           "Projection": {
             "ProjectionType": "KEYS_ONLY"
           }
+        },
+        {
+          "IndexName": "REDDIT_NAMES",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "REDDIT_NAME",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "KEY",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        },
+        {
+          "IndexName": "SLACK_WEBHOOKS",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "SLACK_WEBHOOK_ID",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "KEY",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        },
+        {
+          "IndexName": "TWITTER_APPS",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "TWITTER_APP_ID",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "KEY",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
         }
       ],
       "TableData": [
         {
-          "HASH": { "S": "REDDIT/POST/t3_abcdef" },
-          "SORT": { "S": "REDDIT/POST" },
+          "KEY": { "S": "REDDIT/POST/t3_abcdef" },
+          "TYPE": { "S": "REDDIT/POST" },
+          "REDDIT_NAME": { "S": "t3_abcdef" },
           "CREATED_UTC": { "N": "1600000000" }
         },
         {
-          "HASH": { "S": "REDDIT/POST/t3_abcdef" },
-          "SORT": { "S": "SLACK/POST" },
-          "CREATED_UTC": { "N": "1600000000" }
-        },
-        {
-          "HASH": { "S": "REDDIT/POST/t3_abcdef" },
-          "SORT": { "S": "TWITTER/POST" },
-          "CREATED_UTC": { "N": "1600000000" }
-        },
-        {
-          "HASH": { "S": "REDDIT/POST/t3_fedcba" },
-          "SORT": { "S": "REDDIT/POST" },
+          "KEY": { "S": "REDDIT/POST/t3_fedcba" },
+          "TYPE": { "S": "REDDIT/POST" },
+          "REDDIT_NAME": { "S": "t3_fedcba" },
           "CREATED_UTC": { "N": "1600000001" }
         },
         {
-          "HASH": { "S": "REDDIT/POST/t3_fedcba" },
-          "SORT": { "S": "SLACK/POST" },
-          "CREATED_UTC": { "N": "1600000001" }
+          "KEY": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" },
+          "TYPE": { "S": "SLACK/WEBHOOK" },
+          "SLACK_WEBHOOK_ID": { "S": "T1234ABCD/C1234ABCD" }
         },
         {
-          "HASH": { "S": "REDDIT/POST/t3_fedcba" },
-          "SORT": { "S": "TWITTER/POST" },
-          "CREATED_UTC": { "N": "1600000001" }
+          "KEY": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" },
+          "TYPE": { "S": "SLACK/WEBHOOK" },
+          "SLACK_WEBHOOK_ID": { "S": "TABCD1234/CABCD1234" }
         },
         {
-          "HASH": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" },
-          "SORT": { "S": "SLACK/WEBHOOK" }
+          "KEY": { "S": "TWITTER/APP/@brutalismbot" },
+          "TYPE": { "S": "TWITTER/APP" },
+          "TWITTER_APP_ID": { "S": "@brutalismbot" }
         },
         {
-          "HASH": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" },
-          "SORT": { "S": "SLACK/WEBHOOK" }
+          "KEY": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_abcdef" },
+          "TYPE": { "S": "SLACK/POST" },
+          "REDDIT_NAME": { "S": "t3_abcdef" },
+          "SLACK_WEBHOOK_ID": { "S": "T1234ABCD/C1234ABCD" }
         },
         {
-          "HASH": { "S": "SLACK/POST/t3_abcdef/T1234ABCD/C1234ABCD" },
-          "SORT": { "S": "REDDIT/POST/t3_abcdef" }
+          "KEY": { "S": "SLACK/POST/T1234ABCD/C1234ABCD/t3_fedcba" },
+          "TYPE": { "S": "SLACK/POST" },
+          "REDDIT_NAME": { "S": "t3_fedcba" },
+          "SLACK_WEBHOOK_ID": { "S": "T1234ABCD/C1234ABCD" }
         },
         {
-          "HASH": { "S": "SLACK/POST/t3_abcdef/T1234ABCD/C1234ABCD" },
-          "SORT": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" }
+          "KEY": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_abcdef" },
+          "TYPE": { "S": "SLACK/POST" },
+          "REDDIT_NAME": { "S": "t3_abcdef" },
+          "SLACK_WEBHOOK_ID": { "S": "TABCD1234/CABCD1234" }
         },
         {
-          "HASH": { "S": "SLACK/POST/t3_fedcba/T1234ABCD/C1234ABCD" },
-          "SORT": { "S": "REDDIT/POST/t3_fedcba" }
+          "KEY": { "S": "SLACK/POST/TABCD1234/CABCD1234/t3_fedcba" },
+          "TYPE": { "S": "SLACK/POST" },
+          "REDDIT_NAME": { "S": "t3_fedcba" },
+          "SLACK_WEBHOOK_ID": { "S": "TABCD1234/CABCD1234" }
         },
         {
-          "HASH": { "S": "SLACK/POST/t3_fedcba/T1234ABCD/C1234ABCD" },
-          "SORT": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" }
+          "KEY": { "S": "TWITTER/POST/@brutalismbot/13579046079686/t3_abcdef" },
+          "TYPE": { "S": "TWITTER/POST" },
+          "REDDIT_NAME": { "S": "t3_abcdef" },
+          "TWITTER_APP_ID": { "S": "@brutalismbot" }
         },
         {
-          "HASH": { "S": "SLACK/POST/t3_abcdef/TABCD1234/CABCD1234" },
-          "SORT": { "S": "REDDIT/POST/t3_abcdef" }
-        },
-        {
-          "HASH": { "S": "SLACK/POST/t3_abcdef/TABCD1234/CABCD1234" },
-          "SORT": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" }
-        },
-        {
-          "HASH": { "S": "SLACK/POST/t3_fedcba/TABCD1234/CABCD1234" },
-          "SORT": { "S": "REDDIT/POST/t3_fedcba" }
-        },
-        {
-          "HASH": { "S": "SLACK/POST/t3_fedcba/TABCD1234/CABCD1234" },
-          "SORT": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" }
-        },
-        {
-          "HASH": { "S": "TWITTER/APP/@brutalismbot" },
-          "SORT": { "S": "TWITTER/APP" }
-        },
-        {
-          "HASH": {
-            "S": "TWITTER/POST/@brutalismbot/t3_abcdef/1357904607968641029"
-          },
-          "SORT": { "S": "REDDIT/POST/t3_abcdef" }
-        },
-        {
-          "HASH": {
-            "S": "TWITTER/POST/@brutalismbot/t3_abcdef/1357904607968641029"
-          },
-          "SORT": { "S": "TWITTER/APP/@brutalismbot" }
-        },
-        {
-          "HASH": {
-            "S": "TWITTER/POST/@brutalismbot/t3_fedcba/1365439259730190341"
-          },
-          "SORT": { "S": "REDDIT/POST/t3_fedcba" }
-        },
-        {
-          "HASH": {
-            "S": "TWITTER/POST/@brutalismbot/t3_fedcba/1365439259730190341"
-          },
-          "SORT": { "S": "TWITTER/APP/@brutalismbot" }
+          "KEY": { "S": "TWITTER/POST/@brutalismbot/13654392597301/t3_fedcba" },
+          "TYPE": { "S": "TWITTER/POST" },
+          "REDDIT_NAME": { "S": "t3_fedcba" },
+          "TWITTER_APP_ID": { "S": "@brutalismbot" }
         }
       ],
       "DataAccess": {
