@@ -1,10 +1,12 @@
+require "dotenv/load"
+
 require "brutalismbot"
 require "brutalismbot/aws/s3"
 
 namespace :local do
   namespace :db do
     desc "Seed local DynamoDB"
-    task :seed => %i[seed:webhooks seed:posts]
+    task :seed => %i[seed:reddit seed:slack seed:twitter]
 
     desc "Create local DynamoDB"
     task :create => %i[up terraform:workspace:local terraform:apply:auto]
@@ -30,12 +32,25 @@ namespace :local do
         @s3  = Brutalismbot::Aws::S3::Client.new
       end
 
-      task :webhooks => :init do
-        @bot.slack.webhooks.put(*@s3.list_slack_webhooks)
+      task :slack => %i[slack:webhooks]
+      namespace :slack do
+        task :webhooks => :init do
+          @bot.slack.webhooks.put(*@s3.list_slack_webhooks)
+        end
       end
 
-      task :posts => :init do
-        @bot.reddit.posts.put(*@s3.list_reddit_posts[-10..-5])
+      task :twitter => %i[twitter:apps]
+      namespace :twitter do
+        task :apps => :init do
+          # TODO
+        end
+      end
+
+      task :reddit => %i[reddit:posts]
+      namespace :reddit do
+        task :posts => :init do
+          @bot.reddit.posts.put(*@s3.list_reddit_posts[-10..-5])
+        end
       end
     end
   end

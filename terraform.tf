@@ -41,13 +41,13 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   attribute {
-    name = "CREATED_UTC"
-    type = "N"
+    name = "TYPE"
+    type = "S"
   }
 
   attribute {
-    name = "TYPE"
-    type = "S"
+    name = "CREATED_UTC"
+    type = "N"
   }
 
   attribute {
@@ -56,12 +56,17 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   attribute {
-    name = "SLACK_WEBHOOK"
+    name = "SLACK_TEAM_ID"
     type = "S"
   }
 
   attribute {
-    name = "TWITTER_APP"
+    name = "SLACK_CHANNEL_ID"
+    type = "S"
+  }
+
+  attribute {
+    name = "TWITTER_APP_ID"
     type = "S"
   }
 
@@ -71,17 +76,17 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   global_secondary_index {
-    name            = "CHRONO"
-    hash_key        = "TYPE"
+    name            = "REDDIT_POSTS"
+    hash_key        = "REDDIT_NAME"
     range_key       = "CREATED_UTC"
-    projection_type = "KEYS_ONLY"
+    projection_type = "ALL"
     read_capacity   = 0
     write_capacity  = 0
   }
 
   global_secondary_index {
-    name            = "REDDIT_NAMES"
-    hash_key        = "REDDIT_NAME"
+    name            = "TYPES"
+    hash_key        = "TYPE"
     range_key       = "KEY"
     projection_type = "ALL"
     read_capacity   = 0
@@ -90,8 +95,8 @@ resource "aws_dynamodb_table" "brutalismbot" {
 
   global_secondary_index {
     name            = "SLACK_WEBHOOKS"
-    hash_key        = "SLACK_WEBHOOK"
-    range_key       = "KEY"
+    hash_key        = "SLACK_TEAM_ID"
+    range_key       = "SLACK_CHANNEL_ID"
     projection_type = "ALL"
     read_capacity   = 0
     write_capacity  = 0
@@ -99,8 +104,7 @@ resource "aws_dynamodb_table" "brutalismbot" {
 
   global_secondary_index {
     name            = "TWITTER_APPS"
-    hash_key        = "TWITTER_APP"
-    range_key       = "KEY"
+    hash_key        = "TWITTER_APP_ID"
     projection_type = "ALL"
     read_capacity   = 0
     write_capacity  = 0
