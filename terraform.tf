@@ -28,26 +28,21 @@ locals {
 
 resource "aws_dynamodb_table" "brutalismbot" {
   billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "KEY"
+  hash_key       = "HASH"
   name           = "Brutalismbot"
-  range_key      = null
+  range_key      = "SORT"
   read_capacity  = 0
   tags           = local.tags
   write_capacity = 0
 
   attribute {
-    name = "KEY"
+    name = "HASH"
     type = "S"
   }
 
   attribute {
-    name = "TYPE"
+    name = "SORT"
     type = "S"
-  }
-
-  attribute {
-    name = "CREATED_UTC"
-    type = "N"
   }
 
   attribute {
@@ -56,17 +51,12 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   attribute {
-    name = "SLACK_TEAM_ID"
+    name = "SLACK_WEBHOOK_KEY"
     type = "S"
   }
 
   attribute {
-    name = "SLACK_CHANNEL_ID"
-    type = "S"
-  }
-
-  attribute {
-    name = "TWITTER_APP_ID"
+    name = "TWITTER_HANDLE"
     type = "S"
   }
 
@@ -76,35 +66,36 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   global_secondary_index {
-    name            = "REDDIT_POSTS"
+    name            = "SORT"
+    hash_key        = "SORT"
+    range_key       = "HASH"
+    projection_type = "ALL"
+    read_capacity   = 0
+    write_capacity  = 0
+  }
+
+  global_secondary_index {
+    name            = "REDDIT_NAME"
     hash_key        = "REDDIT_NAME"
-    range_key       = "CREATED_UTC"
+    range_key       = "HASH"
     projection_type = "ALL"
     read_capacity   = 0
     write_capacity  = 0
   }
 
   global_secondary_index {
-    name            = "TYPES"
-    hash_key        = "TYPE"
-    range_key       = "KEY"
+    name            = "TWITTER_HANDLE"
+    hash_key        = "TWITTER_HANDLE"
+    range_key       = "HASH"
     projection_type = "ALL"
     read_capacity   = 0
     write_capacity  = 0
   }
 
   global_secondary_index {
-    name            = "SLACK_WEBHOOKS"
-    hash_key        = "SLACK_TEAM_ID"
-    range_key       = "SLACK_CHANNEL_ID"
-    projection_type = "ALL"
-    read_capacity   = 0
-    write_capacity  = 0
-  }
-
-  global_secondary_index {
-    name            = "TWITTER_APPS"
-    hash_key        = "TWITTER_APP_ID"
+    name            = "SLACK_WEBHOOK_KEY"
+    hash_key        = "SLACK_WEBHOOK_KEY"
+    range_key       = "HASH"
     projection_type = "ALL"
     read_capacity   = 0
     write_capacity  = 0
