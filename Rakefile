@@ -64,37 +64,34 @@ namespace :prod do
 end
 
 namespace :terraform do
-  task :init => ".terraform"
-  directory ".terraform" do
-    sh "terraform init"
-  end
-
   desc "Apply terraform"
   task :apply => :init do
-    sh "terraform apply"
+    sh %{terraform apply}
   end
 
   desc "Show terraform plan"
   task :plan => :init do
-    sh "terraform plan -detailed-exitcode"
+    sh %{terraform plan -detailed-exitcode}
   end
 
   namespace :apply do
     desc "Auto-apply terraform"
     task :auto => :init do
-      sh "terraform apply -auto-approve"
+      sh %{terraform apply -auto-approve}
     end
   end
 
-  namespace :workspace do
-    desc "Use local terraform workspace"
-    task :local => :init do
-      sh "terraform workspace select local"
-    end
+  task :init => ".terraform"
+  directory ".terraform" do
+    sh %{terraform init}
+  end
 
-    desc "Use prod terraform workspace"
-    task :prod => :init do
-      sh "terraform workspace select prod"
+  namespace :workspace do
+    %i[local prod].each do |name|
+      desc "Use #{ name } terraform workspace"
+      task name => :init do
+        sh %{terraform workspace select #{ name }}
+      end
     end
   end
 end
