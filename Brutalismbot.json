@@ -3,146 +3,403 @@
   "ModelMetadata": {
     "Author": "small weird number",
     "DateCreated": "Oct 18, 2020, 02:11 PM",
-    "DateLastModified": "Apr 04, 2021, 07:49 PM",
+    "DateLastModified": "Apr 17, 2021, 16:45 PM",
     "Description": "Brutalismbot posting committee",
     "Version": "2.0",
     "AWSService": "Amazon DynamoDB"
   },
   "DataModel": [
     {
-      "TableName": "Brutalismbot",
-      "KeyAttributes": {
-        "PartitionKey": { "AttributeName": "HASH", "AttributeType": "S" },
-        "SortKey": { "AttributeName": "SORT", "AttributeType": "S" }
+      "DataAccess": {
+        "MySql": {
+        }
       },
-      "NonKeyAttributes": [
-        { "AttributeName": "REDDIT_NAME", "AttributeType": "S" },
-        { "AttributeName": "SLACK_WEBHOOK_KEY", "AttributeType": "S" },
-        { "AttributeName": "TWITTER_HANDLE", "AttributeType": "S" }
-      ],
       "GlobalSecondaryIndexes": [
         {
-          "IndexName": "SORT_HASH",
-          "Projection": { "ProjectionType": "ALL" },
-          "KeyAttributes": {
-            "PartitionKey": { "AttributeName": "SORT", "AttributeType": "S" },
-            "SortKey": { "AttributeName": "HASH", "AttributeType": "S" }
-          }
-        },
-        {
-          "IndexName": "REDDIT_NAME",
-          "Projection": { "ProjectionType": "ALL" },
-          "KeyAttributes": {
-            "PartitionKey": {
-              "AttributeName": "REDDIT_NAME",
-              "AttributeType": "S"
-            },
-            "SortKey": { "AttributeName": "HASH", "AttributeType": "S" }
-          }
-        },
-        {
-          "IndexName": "SLACK_WEBHOOK_KEY",
-          "Projection": { "ProjectionType": "ALL" },
-          "KeyAttributes": {
-            "PartitionKey": {
-              "AttributeName": "SLACK_WEBHOOK_KEY",
-              "AttributeType": "S"
-            },
-            "SortKey": { "AttributeName": "HASH", "AttributeType": "S" }
-          }
-        },
-        {
-          "IndexName": "TWITTER_HANDLE",
+          "IndexName": "type",
           "Projection": {
             "ProjectionType": "ALL"
           },
           "KeyAttributes": {
             "PartitionKey": {
-              "AttributeName": "TWITTER_HANDLE",
-              "AttributeType": "S"
+              "AttributeType": "S",
+              "AttributeName": "TYPE"
             },
-            "SortKey": { "AttributeName": "HASH", "AttributeType": "S" }
+            "SortKey": {
+              "AttributeType": "S",
+              "AttributeName": "SORT"
+            }
           }
+        },
+        {
+          "IndexName": "reddit-name",
+          "Projection": {
+            "ProjectionType": "ALL"
+          },
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeType": "S",
+              "AttributeName": "NAME"
+            },
+            "SortKey": {
+              "AttributeType": "S",
+              "AttributeName": "HASH"
+            }
+          }
+        }
+      ],
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeType": "S",
+          "AttributeName": "HASH"
+        },
+        "SortKey": {
+          "AttributeType": "S",
+          "AttributeName": "SORT"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeType": "S",
+          "AttributeName": "NAME"
+        },
+        {
+          "AttributeType": "S",
+          "AttributeName": "TYPE"
         }
       ],
       "TableData": [
         {
-          "HASH": { "S": "REDDIT/POST/2021-04-04T07:40:20Z/t3_abcdef" },
-          "SORT": { "S": "REDDIT/POST" },
-          "REDDIT_NAME": { "S": "t3_abcdef" }
-        },
-        {
-          "HASH": { "S": "REDDIT/POST/2021-04-04T17:00:25Z/t3_fedcba" },
-          "SORT": { "S": "REDDIT/POST" },
-          "REDDIT_NAME": { "S": "t3_fedcba" }
-        },
-        {
-          "HASH": { "S": "SLACK/WEBHOOK/T1234ABCD/C1234ABCD" },
-          "SORT": { "S": "SLACK/WEBHOOK" },
-          "SLACK_WEBHOOK_KEY": { "S": "T1234ABCD/C1234ABCD" }
-        },
-        {
-          "HASH": { "S": "SLACK/WEBHOOK/TABCD1234/CABCD1234" },
-          "SORT": { "S": "SLACK/WEBHOOK" },
-          "SLACK_WEBHOOK_KEY": { "S": "TABCD1234/CABCD1234" }
+          "HASH": {
+            "S": "t3_3xx2m7"
+          },
+          "SORT": {
+            "S": "2021-04-11T00:18:28Z"
+          },
+          "TYPE": {
+            "S": "REDDIT/POST"
+          },
+          "NAME": {
+            "S": "t3_3xx2m7"
+          }
         },
         {
           "HASH": {
-            "S": "SLACK/POST/2021-04-04T07:40:20Z/t3_abcdef/T1234ABCD/C1234ABCD"
+            "S": "t3_z5pedn"
           },
-          "SORT": { "S": "SLACK/POST" },
-          "REDDIT_NAME": { "S": "t3_abcdef" },
-          "SLACK_WEBHOOK_KEY": { "S": "T1234ABCD/C1234ABCD" }
+          "SORT": {
+            "S": "2021-04-12T05:23:07Z"
+          },
+          "TYPE": {
+            "S": "REDDIT/POST"
+          },
+          "NAME": {
+            "S": "t3_z5pedn"
+          }
         },
         {
           "HASH": {
-            "S": "SLACK/POST/2021-04-04T17:00:25Z/t3_fedcba/T1234ABCD/C1234ABCD"
+            "S": "t3_zdqyds"
           },
-          "SORT": { "S": "SLACK/POST" },
-          "REDDIT_NAME": { "S": "t3_fedcba" },
-          "SLACK_WEBHOOK_KEY": { "S": "T1234ABCD/C1234ABCD" }
+          "SORT": {
+            "S": "2021-04-11T22:24:14Z"
+          },
+          "TYPE": {
+            "S": "REDDIT/POST"
+          },
+          "NAME": {
+            "S": "t3_zdqyds"
+          }
         },
         {
           "HASH": {
-            "S": "SLACK/POST/2021-04-04T07:40:20Z/t3_abcdef/TABCD1234/CABCD1234"
+            "S": "/r/brutalism"
           },
-          "SORT": { "S": "SLACK/POST" },
-          "REDDIT_NAME": { "S": "t3_abcdef" },
-          "SLACK_WEBHOOK_KEY": { "S": "TABCD1234/CABCD1234" }
+          "SORT": {
+            "S": "/r/brutalism"
+          },
+          "TYPE": {
+            "S": "REDDIT/QUEUE"
+          }
         },
         {
           "HASH": {
-            "S": "SLACK/POST/2021-04-04T17:00:25Z/t3_fedcba/TABCD1234/CABCD1234"
+            "S": "AH0KW28C9-brutalismbot"
           },
-          "SORT": { "S": "SLACK/POST" },
-          "REDDIT_NAME": { "S": "t3_fedcba" },
-          "SLACK_WEBHOOK_KEY": { "S": "TABCD1234/CABCD1234" }
-        },
-        {
-          "HASH": { "S": "TWITTER/APP/@brutalismbot" },
-          "SORT": { "S": "TWITTER/APP" },
-          "TWITTER_HANDLE": { "S": "@brutalismbot" }
-        },
-        {
-          "HASH": {
-            "S": "TWITTER/POST/2021-04-04T07:40:20Z/t3_abcdef/@brutalismbot/7336472702960101376"
+          "SORT": {
+            "S": "Brutalismbot"
           },
-          "SORT": { "S": "TWITTER/POST" },
-          "REDDIT_NAME": { "S": "t3_abcdef" },
-          "TWITTER_HANDLE": { "S": "@brutalismbot" }
+          "TYPE": {
+            "S": "SLACK/APP"
+          }
         },
         {
           "HASH": {
-            "S": "TWITTER/POST/2021-04-04T17:00:25Z/t3_fedcba/@brutalismbot/6132058796278553600"
+            "S": "T017PKQW0Q3/C01ADVNXUB5/t3_3xx2m7"
           },
-          "SORT": { "S": "TWITTER/POST" },
-          "REDDIT_NAME": { "S": "t3_fedcba" },
-          "TWITTER_HANDLE": { "S": "@brutalismbot" }
+          "SORT": {
+            "S": "2021-04-11T00:18:28Z"
+          },
+          "TYPE": {
+            "S": "SLACK/POST"
+          },
+          "NAME": {
+            "S": "t3_3xx2m7"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T017PKQW0Q3/C01ADVNXUB5/t3_z5pedn"
+          },
+          "SORT": {
+            "S": "2021-04-12T05:23:07Z"
+          },
+          "TYPE": {
+            "S": "SLACK/POST"
+          },
+          "NAME": {
+            "S": "t3_z5pedn"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T017PKQW0Q3/C01ADVNXUB5/t3_zdqyds"
+          },
+          "SORT": {
+            "S": "2021-04-11T22:24:14Z"
+          },
+          "TYPE": {
+            "S": "SLACK/POST"
+          },
+          "NAME": {
+            "S": "t3_zdqyds"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T01CS9C7VHI/C01XR08FMX2/t3_3xx2m7"
+          },
+          "SORT": {
+            "S": "2021-04-11T00:18:28Z"
+          },
+          "TYPE": {
+            "S": "SLACK/POST"
+          },
+          "NAME": {
+            "S": "t3_3xx2m7"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T01CS9C7VHI/C01XR08FMX2/t3_z5pedn"
+          },
+          "SORT": {
+            "S": "2021-04-12T05:23:07Z"
+          },
+          "TYPE": {
+            "S": "SLACK/POST"
+          },
+          "NAME": {
+            "S": "t3_z5pedn"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T01CS9C7VHI/C01XR08FMX2/t3_zdqyds"
+          },
+          "SORT": {
+            "S": "2021-04-11T22:24:14Z"
+          },
+          "TYPE": {
+            "S": "SLACK/POST"
+          },
+          "NAME": {
+            "S": "t3_zdqyds"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T01VX4FF7LR/C01PA0ZY5KM/t3_3xx2m7"
+          },
+          "SORT": {
+            "S": "2021-04-11T00:18:28Z"
+          },
+          "TYPE": {
+            "S": "SLACK/POST"
+          },
+          "NAME": {
+            "S": "t3_3xx2m7"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T01VX4FF7LR/C01PA0ZY5KM/t3_z5pedn"
+          },
+          "SORT": {
+            "S": "2021-04-12T05:23:07Z"
+          },
+          "TYPE": {
+            "S": "SLACK/POST"
+          },
+          "NAME": {
+            "S": "t3_z5pedn"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T01VX4FF7LR/C01PA0ZY5KM/t3_zdqyds"
+          },
+          "SORT": {
+            "S": "2021-04-11T22:24:14Z"
+          },
+          "TYPE": {
+            "S": "SLACK/POST"
+          },
+          "NAME": {
+            "S": "t3_zdqyds"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T017PKQW0Q3/C01ADVNXUB5"
+          },
+          "SORT": {
+            "S": "<slack-team-3>/<slack-channel-3>"
+          },
+          "TYPE": {
+            "S": "SLACK/WEBHOOK"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T01CS9C7VHI/C01XR08FMX2"
+          },
+          "SORT": {
+            "S": "<slack-team-2>/<slack-channel-2>"
+          },
+          "TYPE": {
+            "S": "SLACK/WEBHOOK"
+          }
+        },
+        {
+          "HASH": {
+            "S": "T01VX4FF7LR/C01PA0ZY5KM"
+          },
+          "SORT": {
+            "S": "<slack-team-1>/<slack-channel-1>"
+          },
+          "TYPE": {
+            "S": "SLACK/WEBHOOK"
+          }
+        },
+        {
+          "HASH": {
+            "S": "/r/brutalism"
+          },
+          "SORT": {
+            "S": "STATS/MAX"
+          },
+          "TYPE": {
+            "S": "STATS"
+          }
+        },
+        {
+          "HASH": {
+            "S": "17014227-@brutalismbot"
+          },
+          "SORT": {
+            "S": "@brutalismbot"
+          },
+          "TYPE": {
+            "S": "TWITTER/APP"
+          }
+        },
+        {
+          "HASH": {
+            "S": "@brutalismbot/t3_3xx2m7"
+          },
+          "SORT": {
+            "S": "2021-04-11T00:18:28Z/1"
+          },
+          "TYPE": {
+            "S": "TWITTER/POST"
+          },
+          "NAME": {
+            "S": "t3_3xx2m7"
+          }
+        },
+        {
+          "HASH": {
+            "S": "@brutalismbot/t3_3xx2m7"
+          },
+          "SORT": {
+            "S": "2021-04-11T00:18:28Z/2"
+          },
+          "TYPE": {
+            "S": "TWITTER/POST"
+          },
+          "NAME": {
+            "S": "t3_3xx2m7"
+          }
+        },
+        {
+          "HASH": {
+            "S": "@brutalismbot/t3_z5pedn"
+          },
+          "SORT": {
+            "S": "2021-04-12T05:23:07Z/1"
+          },
+          "TYPE": {
+            "S": "TWITTER/POST"
+          },
+          "NAME": {
+            "S": "t3_z5pedn"
+          }
+        },
+        {
+          "HASH": {
+            "S": "@brutalismbot/t3_z5pedn"
+          },
+          "SORT": {
+            "S": "2021-04-12T05:23:07Z/2"
+          },
+          "TYPE": {
+            "S": "TWITTER/POST"
+          },
+          "NAME": {
+            "S": "t3_z5pedn"
+          }
+        },
+        {
+          "HASH": {
+            "S": "@brutalismbot/t3_zdqyds"
+          },
+          "SORT": {
+            "S": "2021-04-11T22:24:14Z/1"
+          },
+          "TYPE": {
+            "S": "TWITTER/POST"
+          },
+          "NAME": {
+            "S": "t3_zdqyds"
+          }
+        },
+        {
+          "HASH": {
+            "S": "@brutalismbot/t3_zdqyds"
+          },
+          "SORT": {
+            "S": "2021-04-11T22:24:14Z/2"
+          },
+          "TYPE": {
+            "S": "TWITTER/POST"
+          },
+          "NAME": {
+            "S": "t3_zdqyds"
+          }
         }
       ],
-      "DataAccess": {
-        "MySql": {}
-      }
+      "TableName": "Brutalismbot"
     }
   ]
 }

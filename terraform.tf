@@ -46,17 +46,12 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   attribute {
-    name = "REDDIT_NAME"
+    name = "NAME"
     type = "S"
   }
 
   attribute {
-    name = "SLACK_WEBHOOK_KEY"
-    type = "S"
-  }
-
-  attribute {
-    name = "TWITTER_HANDLE"
+    name = "TYPE"
     type = "S"
   }
 
@@ -66,35 +61,17 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   global_secondary_index {
-    name            = "SORT"
-    hash_key        = "SORT"
-    range_key       = "HASH"
+    name            = "type"
+    hash_key        = "TYPE"
+    range_key       = "SORT"
     projection_type = "ALL"
     read_capacity   = 0
     write_capacity  = 0
   }
 
   global_secondary_index {
-    name            = "REDDIT_NAME"
-    hash_key        = "REDDIT_NAME"
-    range_key       = "HASH"
-    projection_type = "ALL"
-    read_capacity   = 0
-    write_capacity  = 0
-  }
-
-  global_secondary_index {
-    name            = "TWITTER_HANDLE"
-    hash_key        = "TWITTER_HANDLE"
-    range_key       = "HASH"
-    projection_type = "ALL"
-    read_capacity   = 0
-    write_capacity  = 0
-  }
-
-  global_secondary_index {
-    name            = "SLACK_WEBHOOK_KEY"
-    hash_key        = "SLACK_WEBHOOK_KEY"
+    name            = "reddit-name"
+    hash_key        = "NAME"
     range_key       = "HASH"
     projection_type = "ALL"
     read_capacity   = 0

@@ -1,0 +1,46 @@
+{
+  "ModelName": "Brutalismbot",
+  "ModelMetadata": {
+    "Author": "small weird number",
+    "DateCreated": "Oct 18, 2020, 02:11 PM",
+    "DateLastModified": "<%= Time.now.strftime('%b %-d, %Y, %H:%M %p') %>",
+    "Description": "Brutalismbot posting committee",
+    "Version": "2.0",
+    "AWSService": "Amazon DynamoDB"
+  },
+  "DataModel": [
+    {
+      "DataAccess": {
+        "MySql": {}
+      },
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "type",
+          "Projection": { "ProjectionType": "ALL" },
+          "KeyAttributes": {
+            "PartitionKey": { "AttributeType": "S", "AttributeName": "TYPE" },
+            "SortKey":      { "AttributeType": "S", "AttributeName": "SORT" }
+          }
+        },
+        {
+          "IndexName": "reddit-name",
+          "Projection": { "ProjectionType": "ALL" },
+          "KeyAttributes": {
+            "PartitionKey": { "AttributeType": "S", "AttributeName": "NAME" },
+            "SortKey":      { "AttributeType": "S", "AttributeName": "HASH" }
+          }
+        }
+      ],
+      "KeyAttributes": {
+        "PartitionKey": { "AttributeType": "S", "AttributeName": "HASH" },
+        "SortKey":      { "AttributeType": "S", "AttributeName": "SORT" }
+      },
+      "NonKeyAttributes": [
+        { "AttributeType": "S", "AttributeName": "NAME" },
+        { "AttributeType": "S", "AttributeName": "TYPE" }
+      ],
+      "TableData": <%= (@items || []).to_json %>,
+      "TableName": "Brutalismbot"
+    }
+  ]
+}
