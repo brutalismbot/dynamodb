@@ -28,7 +28,7 @@ locals {
 
 resource "aws_dynamodb_table" "brutalismbot" {
   billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "HASH"
+  hash_key       = "GUID"
   name           = "Brutalismbot"
   range_key      = "SORT"
   read_capacity  = 0
@@ -36,7 +36,7 @@ resource "aws_dynamodb_table" "brutalismbot" {
   write_capacity = 0
 
   attribute {
-    name = "HASH"
+    name = "GUID"
     type = "S"
   }
 
@@ -51,7 +51,7 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   attribute {
-    name = "TYPE"
+    name = "KIND"
     type = "S"
   }
 
@@ -61,8 +61,8 @@ resource "aws_dynamodb_table" "brutalismbot" {
   }
 
   global_secondary_index {
-    name            = "type"
-    hash_key        = "TYPE"
+    name            = "kind"
+    hash_key        = "KIND"
     range_key       = "SORT"
     projection_type = "ALL"
     read_capacity   = 0
@@ -72,7 +72,7 @@ resource "aws_dynamodb_table" "brutalismbot" {
   global_secondary_index {
     name            = "reddit-name"
     hash_key        = "NAME"
-    range_key       = "HASH"
+    range_key       = "GUID"
     projection_type = "ALL"
     read_capacity   = 0
     write_capacity  = 0

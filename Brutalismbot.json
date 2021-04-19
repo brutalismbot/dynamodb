@@ -3,7 +3,7 @@
   "ModelMetadata": {
     "Author": "small weird number",
     "DateCreated": "Oct 18, 2020, 02:11 PM",
-    "DateLastModified": "Apr 17, 2021, 16:45 PM",
+    "DateLastModified": "Apr 18, 2021, 08:25 AM",
     "Description": "Brutalismbot posting committee",
     "Version": "2.0",
     "AWSService": "Amazon DynamoDB"
@@ -71,208 +71,175 @@
       "TableData": [
         {
           "HASH": {
-            "S": "t3_3xx2m7"
+            "S": "REDDIT/POST/t3_uwar1e"
           },
           "SORT": {
-            "S": "2021-04-11T00:18:28Z"
+            "S": "2021-04-13T13:18:31Z"
           },
           "TYPE": {
             "S": "REDDIT/POST"
           },
           "NAME": {
-            "S": "t3_3xx2m7"
+            "S": "t3_uwar1e"
           }
         },
         {
           "HASH": {
-            "S": "t3_z5pedn"
+            "S": "REDDIT/POST/t3_xo2cbo"
           },
           "SORT": {
-            "S": "2021-04-12T05:23:07Z"
+            "S": "2021-04-12T18:25:28Z"
           },
           "TYPE": {
             "S": "REDDIT/POST"
           },
           "NAME": {
-            "S": "t3_z5pedn"
+            "S": "t3_xo2cbo"
           }
         },
         {
           "HASH": {
-            "S": "t3_zdqyds"
+            "S": "REDDIT/POST/t3_ylf3h4"
           },
           "SORT": {
-            "S": "2021-04-11T22:24:14Z"
+            "S": "2021-04-12T08:28:51Z"
           },
           "TYPE": {
             "S": "REDDIT/POST"
           },
           "NAME": {
-            "S": "t3_zdqyds"
+            "S": "t3_ylf3h4"
           }
         },
         {
           "HASH": {
-            "S": "/r/brutalism"
+            "S": "SLACK/POST/T01ESCVVNJ2/C01HGJLFGWR/t3_uwar1e"
           },
           "SORT": {
-            "S": "/r/brutalism"
-          },
-          "TYPE": {
-            "S": "REDDIT/QUEUE"
-          }
-        },
-        {
-          "HASH": {
-            "S": "AH0KW28C9-brutalismbot"
-          },
-          "SORT": {
-            "S": "Brutalismbot"
-          },
-          "TYPE": {
-            "S": "SLACK/APP"
-          }
-        },
-        {
-          "HASH": {
-            "S": "T017PKQW0Q3/C01ADVNXUB5/t3_3xx2m7"
-          },
-          "SORT": {
-            "S": "2021-04-11T00:18:28Z"
+            "S": "2021-04-13T13:18:31Z"
           },
           "TYPE": {
             "S": "SLACK/POST"
           },
           "NAME": {
-            "S": "t3_3xx2m7"
+            "S": "t3_uwar1e"
           }
         },
         {
           "HASH": {
-            "S": "T017PKQW0Q3/C01ADVNXUB5/t3_z5pedn"
+            "S": "SLACK/POST/T01ESCVVNJ2/C01HGJLFGWR/t3_xo2cbo"
           },
           "SORT": {
-            "S": "2021-04-12T05:23:07Z"
+            "S": "2021-04-12T18:25:28Z"
           },
           "TYPE": {
             "S": "SLACK/POST"
           },
           "NAME": {
-            "S": "t3_z5pedn"
+            "S": "t3_xo2cbo"
           }
         },
         {
           "HASH": {
-            "S": "T017PKQW0Q3/C01ADVNXUB5/t3_zdqyds"
+            "S": "SLACK/POST/T01ESCVVNJ2/C01HGJLFGWR/t3_ylf3h4"
           },
           "SORT": {
-            "S": "2021-04-11T22:24:14Z"
+            "S": "2021-04-12T08:28:51Z"
           },
           "TYPE": {
             "S": "SLACK/POST"
           },
           "NAME": {
-            "S": "t3_zdqyds"
+            "S": "t3_ylf3h4"
           }
         },
         {
           "HASH": {
-            "S": "T01CS9C7VHI/C01XR08FMX2/t3_3xx2m7"
+            "S": "SLACK/POST/T01KZECCNER/C01VLPU4U8F/t3_uwar1e"
           },
           "SORT": {
-            "S": "2021-04-11T00:18:28Z"
+            "S": "2021-04-13T13:18:31Z"
           },
           "TYPE": {
             "S": "SLACK/POST"
           },
           "NAME": {
-            "S": "t3_3xx2m7"
+            "S": "t3_uwar1e"
           }
         },
         {
           "HASH": {
-            "S": "T01CS9C7VHI/C01XR08FMX2/t3_z5pedn"
+            "S": "SLACK/POST/T01KZECCNER/C01VLPU4U8F/t3_xo2cbo"
           },
           "SORT": {
-            "S": "2021-04-12T05:23:07Z"
+            "S": "2021-04-12T18:25:28Z"
           },
           "TYPE": {
             "S": "SLACK/POST"
           },
           "NAME": {
-            "S": "t3_z5pedn"
+            "S": "t3_xo2cbo"
           }
         },
         {
           "HASH": {
-            "S": "T01CS9C7VHI/C01XR08FMX2/t3_zdqyds"
+            "S": "SLACK/POST/T01KZECCNER/C01VLPU4U8F/t3_ylf3h4"
           },
           "SORT": {
-            "S": "2021-04-11T22:24:14Z"
+            "S": "2021-04-12T08:28:51Z"
           },
           "TYPE": {
             "S": "SLACK/POST"
           },
           "NAME": {
-            "S": "t3_zdqyds"
+            "S": "t3_ylf3h4"
           }
         },
         {
           "HASH": {
-            "S": "T01VX4FF7LR/C01PA0ZY5KM/t3_3xx2m7"
+            "S": "SLACK/POST/T01TCWAXRXP/C01VR2TYMHI/t3_uwar1e"
           },
           "SORT": {
-            "S": "2021-04-11T00:18:28Z"
+            "S": "2021-04-13T13:18:31Z"
           },
           "TYPE": {
             "S": "SLACK/POST"
           },
           "NAME": {
-            "S": "t3_3xx2m7"
+            "S": "t3_uwar1e"
           }
         },
         {
           "HASH": {
-            "S": "T01VX4FF7LR/C01PA0ZY5KM/t3_z5pedn"
+            "S": "SLACK/POST/T01TCWAXRXP/C01VR2TYMHI/t3_xo2cbo"
           },
           "SORT": {
-            "S": "2021-04-12T05:23:07Z"
+            "S": "2021-04-12T18:25:28Z"
           },
           "TYPE": {
             "S": "SLACK/POST"
           },
           "NAME": {
-            "S": "t3_z5pedn"
+            "S": "t3_xo2cbo"
           }
         },
         {
           "HASH": {
-            "S": "T01VX4FF7LR/C01PA0ZY5KM/t3_zdqyds"
+            "S": "SLACK/POST/T01TCWAXRXP/C01VR2TYMHI/t3_ylf3h4"
           },
           "SORT": {
-            "S": "2021-04-11T22:24:14Z"
+            "S": "2021-04-12T08:28:51Z"
           },
           "TYPE": {
             "S": "SLACK/POST"
           },
           "NAME": {
-            "S": "t3_zdqyds"
+            "S": "t3_ylf3h4"
           }
         },
         {
           "HASH": {
-            "S": "T017PKQW0Q3/C01ADVNXUB5"
-          },
-          "SORT": {
-            "S": "<slack-team-3>/<slack-channel-3>"
-          },
-          "TYPE": {
-            "S": "SLACK/WEBHOOK"
-          }
-        },
-        {
-          "HASH": {
-            "S": "T01CS9C7VHI/C01XR08FMX2"
+            "S": "SLACK/WEBHOOK/T01ESCVVNJ2/C01HGJLFGWR"
           },
           "SORT": {
             "S": "<slack-team-2>/<slack-channel-2>"
@@ -283,7 +250,7 @@
         },
         {
           "HASH": {
-            "S": "T01VX4FF7LR/C01PA0ZY5KM"
+            "S": "SLACK/WEBHOOK/T01KZECCNER/C01VLPU4U8F"
           },
           "SORT": {
             "S": "<slack-team-1>/<slack-channel-1>"
@@ -294,10 +261,21 @@
         },
         {
           "HASH": {
-            "S": "/r/brutalism"
+            "S": "SLACK/WEBHOOK/T01TCWAXRXP/C01VR2TYMHI"
           },
           "SORT": {
-            "S": "STATS/MAX"
+            "S": "<slack-team-3>/<slack-channel-3>"
+          },
+          "TYPE": {
+            "S": "SLACK/WEBHOOK"
+          }
+        },
+        {
+          "HASH": {
+            "S": "REDDIT/POST/STATS"
+          },
+          "SORT": {
+            "S": "MAX"
           },
           "TYPE": {
             "S": "STATS"
@@ -305,97 +283,86 @@
         },
         {
           "HASH": {
-            "S": "17014227-@brutalismbot"
+            "S": "TWITTER/POST/@brutalismbot/t3_uwar1e"
           },
           "SORT": {
-            "S": "@brutalismbot"
-          },
-          "TYPE": {
-            "S": "TWITTER/APP"
-          }
-        },
-        {
-          "HASH": {
-            "S": "@brutalismbot/t3_3xx2m7"
-          },
-          "SORT": {
-            "S": "2021-04-11T00:18:28Z/1"
+            "S": "2021-04-13T13:18:31Z/1"
           },
           "TYPE": {
             "S": "TWITTER/POST"
           },
           "NAME": {
-            "S": "t3_3xx2m7"
+            "S": "t3_uwar1e"
           }
         },
         {
           "HASH": {
-            "S": "@brutalismbot/t3_3xx2m7"
+            "S": "TWITTER/POST/@brutalismbot/t3_uwar1e"
           },
           "SORT": {
-            "S": "2021-04-11T00:18:28Z/2"
+            "S": "2021-04-13T13:18:31Z/2"
           },
           "TYPE": {
             "S": "TWITTER/POST"
           },
           "NAME": {
-            "S": "t3_3xx2m7"
+            "S": "t3_uwar1e"
           }
         },
         {
           "HASH": {
-            "S": "@brutalismbot/t3_z5pedn"
+            "S": "TWITTER/POST/@brutalismbot/t3_xo2cbo"
           },
           "SORT": {
-            "S": "2021-04-12T05:23:07Z/1"
+            "S": "2021-04-12T18:25:28Z/1"
           },
           "TYPE": {
             "S": "TWITTER/POST"
           },
           "NAME": {
-            "S": "t3_z5pedn"
+            "S": "t3_xo2cbo"
           }
         },
         {
           "HASH": {
-            "S": "@brutalismbot/t3_z5pedn"
+            "S": "TWITTER/POST/@brutalismbot/t3_xo2cbo"
           },
           "SORT": {
-            "S": "2021-04-12T05:23:07Z/2"
+            "S": "2021-04-12T18:25:28Z/2"
           },
           "TYPE": {
             "S": "TWITTER/POST"
           },
           "NAME": {
-            "S": "t3_z5pedn"
+            "S": "t3_xo2cbo"
           }
         },
         {
           "HASH": {
-            "S": "@brutalismbot/t3_zdqyds"
+            "S": "TWITTER/POST/@brutalismbot/t3_ylf3h4"
           },
           "SORT": {
-            "S": "2021-04-11T22:24:14Z/1"
+            "S": "2021-04-12T08:28:51Z/1"
           },
           "TYPE": {
             "S": "TWITTER/POST"
           },
           "NAME": {
-            "S": "t3_zdqyds"
+            "S": "t3_ylf3h4"
           }
         },
         {
           "HASH": {
-            "S": "@brutalismbot/t3_zdqyds"
+            "S": "TWITTER/POST/@brutalismbot/t3_ylf3h4"
           },
           "SORT": {
-            "S": "2021-04-11T22:24:14Z/2"
+            "S": "2021-04-12T08:28:51Z/2"
           },
           "TYPE": {
             "S": "TWITTER/POST"
           },
           "NAME": {
-            "S": "t3_zdqyds"
+            "S": "t3_ylf3h4"
           }
         }
       ],
