@@ -29,6 +29,13 @@
             "PartitionKey": { "AttributeType": "S", "AttributeName": "NAME" },
             "SortKey":      { "AttributeType": "S", "AttributeName": "GUID" }
           }
+        },
+        {
+          "IndexName": "slack-team",
+          "Projection": { "ProjectionType": "ALL" },
+          "KeyAttributes": {
+            "PartitionKey": { "AttributeType": "S", "AttributeName": "TEAM_ID" }
+          }
         }
       ],
       "KeyAttributes": {
@@ -37,7 +44,8 @@
       },
       "NonKeyAttributes": [
         { "AttributeType": "S", "AttributeName": "KIND" },
-        { "AttributeType": "S", "AttributeName": "NAME" }
+        { "AttributeType": "S", "AttributeName": "NAME" },
+        { "AttributeType": "S", "AttributeName": "TEAM_ID" }
       ],
       "TableData": <%= (@items || []).to_json %>,
       "TableName": "Brutalismbot"

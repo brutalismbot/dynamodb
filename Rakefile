@@ -151,9 +151,10 @@ namespace :db do
         channel_name = "<slack-channel-#{ i + 1 }>"
 
         webhook = {
-          GUID: { S: "SLACK/WEBHOOK/#{ team_id }/#{ channel_id }" },
-          SORT: { S: "#{ team_name }/#{ channel_name }" },
-          KIND: { S: "SLACK/WEBHOOK" },
+          GUID:    { S: "SLACK/WEBHOOK/#{ team_id }/#{ channel_id }" },
+          SORT:    { S: "#{ team_name }/#{ channel_name }" },
+          KIND:    { S: "SLACK/WEBHOOK" },
+          TEAM_ID: { S: team_id }
         }
 
         enum.yield(webhook)

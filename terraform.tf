@@ -55,6 +55,11 @@ resource "aws_dynamodb_table" "brutalismbot" {
     type = "S"
   }
 
+  attribute {
+    name = "TEAM_ID"
+    type = "S"
+  }
+
   ttl {
     attribute_name = "TTL"
     enabled        = true
@@ -73,6 +78,14 @@ resource "aws_dynamodb_table" "brutalismbot" {
     name            = "reddit-name"
     hash_key        = "NAME"
     range_key       = "GUID"
+    projection_type = "ALL"
+    read_capacity   = 0
+    write_capacity  = 0
+  }
+
+  global_secondary_index {
+    name            = "slack-team"
+    hash_key        = "TEAM_ID"
     projection_type = "ALL"
     read_capacity   = 0
     write_capacity  = 0
