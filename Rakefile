@@ -11,12 +11,12 @@ namespace :db do
 
   desc "Stop local DynamoDB"
   task :down do
-    sh %{docker-compose down}
+    sh %{docker compose down}
   end
 
   desc "Destroy local DynamoDB"
   task :drop do
-    sh %{docker-compose down --volumes}
+    sh %{docker compose down --volumes}
   end
 
   task :init do
@@ -38,7 +38,7 @@ namespace :db do
 
     @workspace = %x(terraform workspace show).strip.to_sym
     if @workspace == :local
-      host = %x(docker-compose port dynamodb 8000).strip
+      host = %x(docker compose port dynamodb 8000).strip
       @table.client.config.endpoint = "http://#{ host }/"
     end
   end
@@ -193,7 +193,7 @@ namespace :db do
 
   desc "Start local DynamoDB"
   task :up do
-    sh %{docker-compose up --detach dynamodb}
+    sh %{docker compose up --detach dynamodb}
   end
 end
 

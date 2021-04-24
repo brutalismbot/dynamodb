@@ -15,10 +15,10 @@
       },
       "GlobalSecondaryIndexes": [
         {
-          "IndexName": "type",
+          "IndexName": "kind",
           "Projection": { "ProjectionType": "ALL" },
           "KeyAttributes": {
-            "PartitionKey": { "AttributeType": "S", "AttributeName": "TYPE" },
+            "PartitionKey": { "AttributeType": "S", "AttributeName": "KIND" },
             "SortKey":      { "AttributeType": "S", "AttributeName": "SORT" }
           }
         },
@@ -27,17 +27,17 @@
           "Projection": { "ProjectionType": "ALL" },
           "KeyAttributes": {
             "PartitionKey": { "AttributeType": "S", "AttributeName": "NAME" },
-            "SortKey":      { "AttributeType": "S", "AttributeName": "HASH" }
+            "SortKey":      { "AttributeType": "S", "AttributeName": "GUID" }
           }
         }
       ],
       "KeyAttributes": {
-        "PartitionKey": { "AttributeType": "S", "AttributeName": "HASH" },
+        "PartitionKey": { "AttributeType": "S", "AttributeName": "GUID" },
         "SortKey":      { "AttributeType": "S", "AttributeName": "SORT" }
       },
       "NonKeyAttributes": [
-        { "AttributeType": "S", "AttributeName": "NAME" },
-        { "AttributeType": "S", "AttributeName": "TYPE" }
+        { "AttributeType": "S", "AttributeName": "KIND" },
+        { "AttributeType": "S", "AttributeName": "NAME" }
       ],
       "TableData": <%= (@items || []).to_json %>,
       "TableName": "Brutalismbot"
