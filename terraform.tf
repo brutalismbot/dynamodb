@@ -4,7 +4,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.0"
+      version = "~> 3.38"
     }
   }
 }
@@ -12,9 +12,9 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 
-  endpoints {
-    dynamodb = local.dynamodb_endpoint
-  }
+  default_tags { tags = local.tags }
+
+  endpoints { dynamodb = local.dynamodb_endpoint }
 }
 
 locals {
@@ -32,7 +32,6 @@ resource "aws_dynamodb_table" "brutalismbot" {
   name           = "Brutalismbot"
   range_key      = "SORT"
   read_capacity  = 0
-  tags           = local.tags
   write_capacity = 0
 
   attribute {
